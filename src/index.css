@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.selected-student {
+  background-color: #d4edda; /* Change the background color as needed */
+  color: #155724; /* Change the text color as needed */
+}

@@ -1,25 +1,25 @@
-import logo from './logo.svg';
+import MentorDashboard from './Components/MentorDashboard';
+import StudentDashboard from './Components/StudentDashboard';
+import CreateStudent from './Components/CreateStudent';
+import CreateMentor from './Components/CreateMentor';
+import SideBar from './Components/SideBar';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
+export const port = 'http://localhost:8000'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div id='wrapper'>
+    <BrowserRouter>
+    <SideBar/>
+    <Routes>
+      <Route path='/MentorDashboard'element={<MentorDashboard />}></Route>
+      <Route path='/student-dashboard'element={<StudentDashboard />}></Route>
+      <Route path='/create-student'element={<CreateStudent />}></Route>
+      <Route path='/create-mentor'element={<CreateMentor />}></Route>
+      <Route path='*' element={<Navigate to={'/MentorDashboard'} />} />
+    </Routes>
+    </BrowserRouter>
+  </div>
 }
 
 export default App;
